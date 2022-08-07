@@ -1,4 +1,4 @@
-resource "aws_docdb_cluster" "docdb" {
+resource "aws_docdb_cluster" "main" {
   cluster_identifier      = "${local.TAG_PREFIX}-docdb"
   engine                  = var.ENGINE
   engine_version          = var.ENGINE_VERSION
@@ -9,7 +9,6 @@ resource "aws_docdb_cluster" "docdb" {
   skip_final_snapshot     = true
   db_cluster_parameter_group_name = aws_docdb_cluster_parameter_group.main.name
 }
-
 
 resource "aws_docdb_cluster_instance" "main" {
   count              = 1
