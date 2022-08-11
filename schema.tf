@@ -8,5 +8,5 @@ cd mongodb-main
 mongo --ssl --host ${aws_docdb_cluster.main.endpoint}:27017 --username ${jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USER"]} --password ${jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_PASS"]} --sslCAFile /home/centos/rds-combined-ca-bundle.pem <catalogue.js
 mongo --ssl --host ${aws_docdb_cluster.main.endpoint}:27017 --username ${jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USER"]} --password ${jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_PASS"]} --sslCAFile /home/centos/rds-combined-ca-bundle.pem <users.js
 EOF
-}
+  }
 }
